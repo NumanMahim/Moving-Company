@@ -1,0 +1,48 @@
+.admin-header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .admin-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .admin-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .admin-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .admin-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .admin-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .admin-logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .admin-logout-button:hover {
+    background-color: #c82333;
+  }
+  

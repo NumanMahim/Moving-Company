@@ -11,8 +11,8 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
-    department: "",
-    joiningDate: "",
+    serviceArea: "",
+    movingDate: "",
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ const SignUp = () => {
     setRole(e.target.value);
     setFormData({
       ...formData,
-      department: "", // Reset role-specific fields
-      joiningDate: "",
+      serviceArea: "",
+      movingDate: "",
     });
   };
 
@@ -51,12 +51,12 @@ const SignUp = () => {
         name: formData.name,
         email: formData.email,
         role,
-        department: role === "Employee" ? formData.department : null,
-        joiningDate: role === "Employee" ? formData.joiningDate : null,
+        serviceArea: role === "Customer" ? formData.serviceArea : null,
+        movingDate: role === "Customer" ? formData.movingDate : null,
       });
 
       setMessage("Account created successfully!");
-      setTimeout(() => navigate("/"), 2000); // Redirect to login after success
+      setTimeout(() => navigate("/"), 2000);
     } catch (error) {
       setMessage(`Error: ${error.message}`);
     }
@@ -64,11 +64,11 @@ const SignUp = () => {
 
   return (
     <div className="signup-container">
-      <div className="signup-box shadow">
+      <div className="signup-box">
         <h1 className="signup-title">Sign Up</h1>
-        <p className="signup-subtitle">Join the HR Portal</p>
+        <p className="signup-subtitle">Join the Packers & Movers Platform</p>
         <form onSubmit={handleSubmit}>
-          <div className="form-group mb-3">
+          <div className="form-group">
             <label htmlFor="role" className="form-label">Select Role</label>
             <select
               name="role"
@@ -78,13 +78,13 @@ const SignUp = () => {
               required
             >
               <option value="">-- Select Role --</option>
-              <option value="HR">HR</option>
-              <option value="Employee">Employee</option>
+              <option value="Admin">Admin</option>
+              <option value="Customer">Customer</option>
             </select>
           </div>
 
           {/* Common Fields */}
-          <div className="form-group mb-3">
+          <div className="form-group">
             <label htmlFor="name" className="form-label">Name</label>
             <input
               type="text"
@@ -96,7 +96,7 @@ const SignUp = () => {
               required
             />
           </div>
-          <div className="form-group mb-3">
+          <div className="form-group">
             <label htmlFor="email" className="form-label">Email</label>
             <input
               type="email"
@@ -108,7 +108,7 @@ const SignUp = () => {
               required
             />
           </div>
-          <div className="form-group mb-3">
+          <div className="form-group">
             <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
@@ -122,26 +122,26 @@ const SignUp = () => {
           </div>
 
           {/* Role-Specific Fields */}
-          {role === "Employee" && (
+          {role === "Customer" && (
             <>
-              <div className="form-group mb-3">
-                <label htmlFor="department" className="form-label">Department</label>
+              <div className="form-group">
+                <label htmlFor="serviceArea" className="form-label">Service Area</label>
                 <input
                   type="text"
-                  name="department"
-                  value={formData.department}
+                  name="serviceArea"
+                  value={formData.serviceArea}
                   onChange={handleChange}
-                  placeholder="Enter your department"
+                  placeholder="Enter your service area"
                   className="form-control"
                   required
                 />
               </div>
-              <div className="form-group mb-3">
-                <label htmlFor="joiningDate" className="form-label">Joining Date</label>
+              <div className="form-group">
+                <label htmlFor="movingDate" className="form-label">Moving Date</label>
                 <input
                   type="date"
-                  name="joiningDate"
-                  value={formData.joiningDate}
+                  name="movingDate"
+                  value={formData.movingDate}
                   onChange={handleChange}
                   className="form-control"
                   required
@@ -152,17 +152,17 @@ const SignUp = () => {
 
           {message && (
             <p
-              className={`text-center ${
-                message.startsWith("Error") ? "text-danger" : "text-success"
+              className={`message ${
+                message.startsWith("Error") ? "error" : "success"
               }`}
             >
               {message}
             </p>
           )}
-          <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+          <button type="submit" className="btn btn-submit">Sign Up</button>
         </form>
-        <p className="text-center mt-3">
-          Already have an account? <a href="/" className="text-decoration-none">Login here</a>
+        <p className="signup-link">
+          Already have an account? <a href="/">Login here</a>
         </p>
       </div>
     </div>

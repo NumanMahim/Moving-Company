@@ -1,21 +1,27 @@
 .footer {
-    background-color: #f1f1f1;
-    padding: 15px 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    color: #333;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

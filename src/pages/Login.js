@@ -26,10 +26,10 @@ const Login = ({ setUser }) => {
         setUser({ email: user.email, uid: user.uid, role: userData.role });
 
         // Redirect based on role
-        if (userData.role === "HR") {
-          navigate("/hr-dashboard");
-        } else if (userData.role === "Employee") {
-          navigate("/employee-dashboard");
+        if (userData.role === "Admin") {
+          navigate("/admin-dashboard");
+        } else if (userData.role === "Customer") {
+          navigate("/customer-dashboard");
         } else {
           setMessage("Unknown role. Please contact admin.");
         }
@@ -44,8 +44,8 @@ const Login = ({ setUser }) => {
   return (
     <div className="login-container">
       <div className="login-box shadow">
-        <h1 className="login-title">HR Portal</h1>
-        <p className="login-subtitle">Streamline your HR processes effortlessly</p>
+        <h1 className="login-title">Packers & Movers</h1>
+        <p className="login-subtitle">Your trusted moving service platform</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-3">
             <label htmlFor="email" className="form-label">Email</label>

@@ -1,0 +1,28 @@
+.admin-footer {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  .admin-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #343a40;
+  }
+  
+  .admin-footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .admin-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .admin-footer a:hover {
+    text-decoration: underline;
+  }
+  
