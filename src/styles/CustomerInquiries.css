@@ -1,0 +1,33 @@
+.customer-inquiries-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .customer-inquiries-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .inquiries-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .inquiry-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+  .loading-message,
+  .error-message,
+  .no-inquiries-message {
+    color: #555;
+    font-size: 18px;
+  }
+  
